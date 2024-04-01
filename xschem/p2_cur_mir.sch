@@ -93,12 +93,12 @@ value="* ngspice commands
 * start op analysis here
    op
    remzerovec
-   write p2_cur_mir3.raw
+   write p2_cur_mir.raw
    set appendwrite
 * start dc sweep for M2 here
    dc vd 0 1.8 0.01   
    remzerovec
-   write p2_cur_mir3.raw
+   write p2_cur_mir.raw
 .endc
 "}
 C {devices/launcher.sym} 100 -330 0 0 {name=h26
