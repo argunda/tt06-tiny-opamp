@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 300 -820 1100 -420 {flags=graph
-y1=-5.6e-21
-y2=7.3e-05
+y1=1.2e-19
+y2=0.00017
 ypos1=0
 ypos2=2
 divy=5
@@ -67,7 +67,7 @@ C {devices/lab_pin.sym} 610 -170 0 0 {name=p3 lab=0  net_name=true}
 C {devices/lab_pin.sym} 610 -370 0 0 {name=p4 lab=VDD  net_name=true}
 C {devices/lab_pin.sym} 740 -230 1 0 {name=p13 lab=GATE  net_name=true}
 C {sky130_fd_pr/nfet_01v8.sym} 630 -230 0 1 {name=M1
-L=1
+L=0.15
 W=W1
 nf=1 
 mult=1
@@ -106,7 +106,7 @@ descr="Netlist & sim"
 tclcommand="xschem netlist; xschem simulate"}
 C {devices/lab_pin.sym} 860 -170 0 1 {name=p1 lab=0  net_name=true}
 C {sky130_fd_pr/nfet_01v8.sym} 840 -230 0 0 {name=M2
-L=1
+L=0.15
 W=W2
 nf=1 
 mult=1
