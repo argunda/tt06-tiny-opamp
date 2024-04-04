@@ -6,8 +6,8 @@ V {}
 S {}
 E {}
 B 2 620 -830 1420 -430 {flags=graph
-y1=1.6e-06
-y2=1.4
+y1=0
+y2=1.8
 ypos1=0
 ypos2=2
 divy=5
@@ -59,7 +59,7 @@ C {devices/lab_pin.sym} 530 -320 1 0 {name=p1 lab=VDD  net_name=true}
 C {devices/gnd.sym} 60 -460 0 0 {name=l2 lab=GND}
 C {devices/gnd.sym} 530 -180 0 0 {name=l3 lab=GND}
 C {devices/res.sym} 810 -200 0 0 {name=R1
-value=1k
+value=10k
 footprint=1206
 device=resistor
 m=1}
