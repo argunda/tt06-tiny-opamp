@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # Ignore everything
 *
 
 # But not these files...
+=======
+
+*
+
+>>>>>>> dccf03aacdb48a609a78241d2e18c123748b9a33
 !.gitignore
 !.spiceinit
