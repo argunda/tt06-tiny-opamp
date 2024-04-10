@@ -105,20 +105,6 @@ C {devices/launcher.sym} 100 -330 0 0 {name=h26
 descr="Netlist & sim" 
 tclcommand="xschem netlist; xschem simulate"}
 C {devices/lab_pin.sym} 860 -170 0 1 {name=p1 lab=0  net_name=true}
-C {sky130_fd_pr/nfet_01v8.sym} 840 -230 0 0 {name=M2
-L=0.15
-W=W2
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
 C {devices/vsource.sym} 980 -240 0 0 {name=VD value=0.5 savecurrent=false}
 C {devices/lab_pin.sym} 980 -170 0 1 {name=p2 lab=0  net_name=true}
 C {devices/lab_pin.sym} 860 -280 0 0 {name=p5 lab=DRAIN  net_name=true}
@@ -139,3 +125,17 @@ L=150
 model=res_xhigh_po_5p73
 spiceprefix=X
 mult=1}
+C {sky130_fd_pr/nfet_g5v0d10v5.sym} 840 -230 0 0 {name=M2
+L=0.5
+W=120
+nf=120
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_g5v0d10v5
+spiceprefix=X
+}
