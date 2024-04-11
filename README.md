@@ -1,38 +1,52 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
+# Setup
 
-# Tiny Tapeout Analog Project Template
+Make sure the $PDK_ROOT & $PDK environment variables are setup.
 
-- [Read the documentation for project](docs/info.md)
+You will need a recent version of Magic and Netgen:
 
-## What is Tiny Tapeout?
+* https://github.com/RTimothyEdwards/magic
+* https://github.com/RTimothyEdwards/netgen
 
-TinyTapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+# Update files for your project name
 
-To learn more and get started, visit https://tinytapeout.com.
+* update mag/Makefile to set your project name at the top of the file
+* update src/project.v to match your project name
 
-## Analog projects
+# Initialise the project
 
-For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
+Run:
 
-*Note*: Analog designs are currently in beta. There's a small chance that the changes will change before the deadline for Tiny Tapeout 6, or that we will have to postpone the analog design support to a future shuttle. If you have any questions, please join the [Tiny Tapeout Discord](https://tinytapeout.com/discord) and ask in the #analog channel.
+    make start
 
-## Enable GitHub actions to build the results page
+This sets up a .mag file ready to start working. It includes all the pins for Tiny Tapeout and 2 power lines.
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+The default is to use a 1x2 block (the smallest). If you need more space - [check here](https://tinytapeout.com/specs/analog/).
 
-## Resources
+# Work on the project
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://docs.google.com/document/d/1aUUZ1jthRpg4QURIIyzlOaPWlmQzr-jBn3wZipVUPt4)
+	make magic
 
-## What next?
+# Run LVS
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@matthewvenn](https://twitter.com/matthewvenn)
+Update src/project.v to add the cells you've used. This Verilog can be treated as blackbox, gatelevel Verilog. So the blackboxed cells don't need to exist, but 
+if you want LVS to check your wiring, then the names and wires should all match your intended layout.
+
+If your design includes custom analog blocks, then you can also add their spice netlists to the mag/tcl/lvs_netgen.tcl. 
+
+Then run:
+
+    make lvs
+
+# Run DRC
+
+It's best to be checking DRC as you are drawing your layout. You can check from the commandline like this:
+
+    make drc
+
+# Update the GDS and LEF
+
+Once your layout is ready to submit generate the GDS and LEF:
+
+    make update_gds
+
+Then head to https://app.tinytapeout.com to submit your design onto the next shuttle.
