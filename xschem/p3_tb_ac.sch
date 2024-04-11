@@ -5,8 +5,8 @@ K {}
 V {}
 S {}
 E {}
-B 2 970 -490 1770 -90 {flags=graph
-y1=-140
+B 2 1210 -480 2010 -80 {flags=graph
+y1=-40
 y2=180
 ypos1=0
 ypos2=2
@@ -19,16 +19,17 @@ divx=5
 subdivx=8
 xlabmag=1.0
 ylabmag=1.0
-node=ph(vout)
-color=7
+node="ph(vout)
+ph(vout_parax)"
+color="7 6"
 dataset=-1
 unitx=1
 logx=1
 logy=0
 }
-B 2 970 -910 1770 -510 {flags=graph
-y1=-61
-y2=84
+B 2 1210 -900 2010 -500 {flags=graph
+y1=-37
+y2=62
 ypos1=0
 ypos2=2
 divy=5
@@ -40,49 +41,54 @@ divx=5
 subdivx=8
 xlabmag=1.0
 ylabmag=1.0
-node="\\"vout db20()\\""
-color=4
+node="\\"vout db20()\\"
+\\"vout_parax db20()\\""
+color="4 6"
 dataset=-1
 unitx=1
 logx=1
 logy=0
 }
-N 50 -580 50 -540 {
-lab=GND}
-N 50 -740 50 -640 {
-lab=VDD}
-N 330 -190 380 -190 {
+N 540 -270 590 -270 {
 lab=#net1}
-N 140 -580 140 -540 {
-lab=GND}
-N 140 -740 140 -640 {
-lab=VIN}
-N 220 -190 270 -190 {
+N 430 -270 480 -270 {
 lab=VAC}
-N 360 -80 800 -80 {
+N 570 -160 1010 -160 {
 lab=#net1}
-N 360 -190 360 -80 {
+N 570 -270 570 -160 {
 lab=#net1}
-N 100 -480 100 -440 {
+N 1010 -200 1010 -160 {
+lab=#net1}
+N 1010 -330 1010 -260 {
+lab=VOUT_PARAX}
+N 890 -330 1010 -330 {
+lab=VOUT_PARAX}
+N 530 -640 580 -640 {
+lab=#net2}
+N 420 -640 470 -640 {
 lab=VAC}
-N 800 -120 800 -80 {
-lab=#net1}
-N 800 -250 800 -180 {
+N 560 -530 1000 -530 {
+lab=#net2}
+N 560 -640 560 -530 {
+lab=#net2}
+N 1000 -570 1000 -530 {
+lab=#net2}
+N 1000 -700 1000 -630 {
 lab=VOUT}
-N 680 -250 800 -250 {
+N 880 -700 1000 -700 {
 lab=VOUT}
 C {devices/title.sym} 160 -30 0 0 {name=l1 author="Sai"}
-C {devices/vsource.sym} 50 -610 0 0 {name=V1 value=1.8 savecurrent=false}
-C {devices/lab_pin.sym} 50 -740 0 0 {name=p8 lab=VDD  net_name=true}
-C {devices/lab_pin.sym} 530 -320 1 0 {name=p1 lab=VDD  net_name=true}
-C {devices/gnd.sym} 50 -540 0 0 {name=l2 lab=GND}
-C {devices/gnd.sym} 530 -180 0 0 {name=l3 lab=GND}
-C {devices/lab_pin.sym} 380 -310 0 0 {name=p2 lab=VIN  net_name=true}
-C {devices/vsource.sym} 140 -610 0 0 {name=VI value=0.9 savecurrent=false}
-C {devices/gnd.sym} 140 -540 0 0 {name=l5 lab=GND}
-C {devices/lab_pin.sym} 140 -740 0 0 {name=p3 lab=VIN  net_name=true}
+C {devices/vsource.sym} 60 -410 0 0 {name=V1 value=1.8 savecurrent=false}
+C {devices/lab_pin.sym} 60 -440 0 0 {name=p8 lab=VDD  net_name=true}
+C {devices/lab_pin.sym} 740 -400 1 0 {name=p1 lab=VDD  net_name=true}
+C {devices/gnd.sym} 60 -380 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} 740 -260 0 0 {name=l3 lab=GND}
+C {devices/lab_pin.sym} 590 -390 0 0 {name=p2 lab=VIN  net_name=true}
+C {devices/vsource.sym} 150 -410 0 0 {name=VI value=0.9 savecurrent=false}
+C {devices/gnd.sym} 150 -380 0 0 {name=l5 lab=GND}
+C {devices/lab_pin.sym} 150 -440 0 0 {name=p3 lab=VIN  net_name=true}
 C {sky130_fd_pr/corner.sym} 20 -190 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {devices/code_shown.sym} 250 -700 0 0 {name=COMMANDS1 only_toplevel=false value="
+C {devices/code_shown.sym} 10 -790 0 0 {name=AC_COMMANDS only_toplevel=false value="
 .option reltol=1e-5
 +  abstol=1e-14 savecurrents
 .control
@@ -92,30 +98,49 @@ C {devices/code_shown.sym} 250 -700 0 0 {name=COMMANDS1 only_toplevel=false valu
   write p3_tb_ac.raw
 .endc
 "}
-C {devices/lab_pin.sym} 800 -250 2 0 {name=p4 lab=VOUT  net_name=true}
-C {devices/capa.sym} 300 -190 1 1 {name=C2
+C {devices/lab_pin.sym} 1010 -330 2 0 {name=p4 lab=VOUT_PARAX  net_name=true}
+C {devices/capa.sym} 510 -270 1 1 {name=C2
 m=1
 value=1T
 footprint=1206
 device="ceramic capacitor"}
-C {devices/ind.sym} 800 -150 0 1 {name=L6
+C {devices/ind.sym} 1010 -230 0 1 {name=L6
 m=1
 value=1T
 footprint=1206
 device=inductor}
-C {devices/launcher.sym} 630 -670 0 0 {name=h3
+C {devices/launcher.sym} 80 -560 0 0 {name=h3
 descr="Netlist & sim" 
 tclcommand="xschem netlist; xschem simulate"}
-C {devices/launcher.sym} 630 -630 0 0 {name=h4 
+C {devices/launcher.sym} 80 -520 0 0 {name=h4 
 descr="Load/unload
 AC waveforms" 
 tclcommand="
 xschem raw_read $netlist_dir/p3_tb_ac.raw ac
 "
 }
-C {devices/lab_pin.sym} 220 -190 0 0 {name=p5 lab=VAC net_name=true}
-C {devices/vsource.sym} 100 -410 0 0 {name=V4 value="0 ac 1 0
+C {devices/lab_pin.sym} 430 -270 0 0 {name=p5 lab=VAC net_name=true}
+C {devices/vsource.sym} 110 -300 0 0 {name=V4 value="0 ac 1 0
 + sin(0 1m 100meg 0 0 0)"}
-C {devices/lab_pin.sym} 100 -480 0 1 {name=l4 sig_type=std_logic lab=VAC}
-C {devices/gnd.sym} 100 -380 0 0 {name=l8 lab=GND}
-C {p3_opamp.sym} 500 -260 0 0 {name=x1}
+C {devices/lab_pin.sym} 110 -330 0 1 {name=l4 sig_type=std_logic lab=VAC}
+C {devices/gnd.sym} 110 -270 0 0 {name=l8 lab=GND}
+C {devices/lab_pin.sym} 730 -770 1 0 {name=p6 lab=VDD  net_name=true}
+C {devices/gnd.sym} 730 -630 0 0 {name=l7 lab=GND}
+C {devices/lab_pin.sym} 580 -760 0 0 {name=p7 lab=VIN  net_name=true}
+C {devices/lab_pin.sym} 1000 -700 2 0 {name=p9 lab=VOUT  net_name=true}
+C {devices/capa.sym} 500 -640 1 1 {name=C1
+m=1
+value=1T
+footprint=1206
+device="ceramic capacitor"}
+C {devices/ind.sym} 1000 -600 0 1 {name=L9
+m=1
+value=1T
+footprint=1206
+device=inductor}
+C {devices/lab_pin.sym} 420 -640 0 0 {name=p10 lab=VAC net_name=true}
+C {p3_opamp.sym} 700 -710 0 0 {name=x2}
+C {p3_opamp.sym} 710 -340 0 0 {name=x1
+schematic=p3_opamp_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/p3_opamp.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/p3_opamp.sim.spice])"}
