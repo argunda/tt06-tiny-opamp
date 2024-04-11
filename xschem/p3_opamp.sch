@@ -8,17 +8,17 @@ E {}
 N 620 -430 860 -430 {
 lab=VX}
 N 620 -600 620 -520 {
-lab=#net1}
+lab=V2}
 N 620 -690 620 -670 {
 lab=VDD}
 N 660 -630 820 -630 {
-lab=#net1}
+lab=V2}
 N 620 -580 690 -580 {
-lab=#net1}
+lab=V2}
 N 690 -580 740 -580 {
-lab=#net1}
+lab=V2}
 N 740 -630 740 -580 {
-lab=#net1}
+lab=V2}
 N 740 -300 740 -270 {
 lab=VSS}
 N 740 -270 740 -250 {
@@ -42,7 +42,7 @@ lab=VSS}
 N 800 -480 860 -480 {
 lab=VSS}
 N 620 -520 620 -510 {
-lab=#net1}
+lab=V2}
 N 620 -450 620 -430 {
 lab=VX}
 N 860 -450 860 -430 {
@@ -173,7 +173,7 @@ C {devices/lab_pin.sym} 1220 -750 1 0 {name=p22 sig_type=std_logic lab=VDD}
 C {devices/lab_pin.sym} 1220 -510 2 0 {name=p24 sig_type=std_logic lab=VOUT}
 C {sky130_fd_pr/corner.sym} 90 -240 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/lab_pin.sym} 1100 -330 1 0 {name=p1 sig_type=std_logic lab=VBIAS}
-C {devices/lab_pin.sym} 990 -560 2 0 {name=p14 sig_type=std_logic lab=VOUT1}
+C {devices/lab_pin.sym} 990 -560 2 0 {name=p14 sig_type=std_logic lab=V1}
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} 410 -670 0 0 {name=R1
 L=2.8
 model=res_xhigh_po_0p35
@@ -251,3 +251,4 @@ C {devices/lab_pin.sym} 740 -480 1 0 {name=p9 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 900 -480 2 0 {name=p16 sig_type=std_logic lab=PLUS}
 C {devices/lab_pin.sym} 580 -480 0 0 {name=p17 sig_type=std_logic lab=MINUS}
 C {devices/lab_pin.sym} 800 -330 2 0 {name=p19 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 620 -540 2 0 {name=p21 sig_type=std_logic lab=V2}
