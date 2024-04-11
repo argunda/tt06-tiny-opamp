@@ -1,8 +1,8 @@
-*swp
-*ext
-*nodes
-*sim
-*spice
-*magicrc
-*def
-lvs.report
+# *swp
+# *ext
+# *nodes
+# *sim
+# *spice
+# *magicrc
+# *def
+# lvs.report
