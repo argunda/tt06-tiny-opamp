@@ -25,6 +25,7 @@ module tt_um_argunda_tiny_opamp (
 	);
 
     // ties for the output enables
+    assign uo_out[0] = VGND;
     assign uo_out[1] = VGND;
     assign uo_out[2] = VGND;
     assign uo_out[3] = VGND;

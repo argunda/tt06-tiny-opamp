@@ -113,7 +113,6 @@ Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[3]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[2]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[1]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[0]
-Cell tt_um_argunda_tiny_opamp (1) disconnected node: uo_out[0]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[7]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[5]
@@ -188,7 +187,6 @@ Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[3]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[2]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[1]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[0]
-Cell tt_um_argunda_tiny_opamp (1) disconnected node: uo_out[0]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[7]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[5]
@@ -261,6 +259,7 @@ uio_out[4]                                 |uio_out[4]
 uio_out[5]                                 |uio_out[5]                                 
 uio_out[6]                                 |uio_out[6]                                 
 uio_out[7]                                 |uio_out[7]                                 
+uo_out[0]                                  |uo_out[0]                                  
 uo_out[1]                                  |uo_out[1]                                  
 uo_out[2]                                  |uo_out[2]                                  
 uo_out[3]                                  |uo_out[3]                                  
@@ -269,10 +268,9 @@ uo_out[5]                                  |uo_out[5]
 uo_out[6]                                  |uo_out[6]                                  
 uo_out[7]                                  |uo_out[7]                                  
 VGND                                       |VGND                                       
-(no matching pin)                          |uo_out[0]                                  
-uo_out[0]                                  |(no matching pin)                          
 ---------------------------------------------------------------------------------------
-Cell pin lists for tt_um_argunda_tiny_opamp and tt_um_argunda_tiny_opamp altered to match.
+Cell pin lists are equivalent.
 Device classes tt_um_argunda_tiny_opamp and tt_um_argunda_tiny_opamp are equivalent.
 
-Final result: Top level cell failed pin matching.
+Final result: Circuits match uniquely.
+.
