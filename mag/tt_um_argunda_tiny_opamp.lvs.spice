@@ -4,11 +4,6 @@
 X0 a_n35_264# a_n35_n696# a_n165_n826# sky130_fd_pr__res_xhigh_po_0p35 l=2.8
 .ends
 
-.subckt sky130_fd_pr__nfet_01v8_lvt_8TELWR a_n108_n250# a_n50_n338# a_n210_n424# a_50_n250#
-X0 a_50_n250# a_n50_n338# a_n108_n250# a_n210_n424# sky130_fd_pr__nfet_01v8_lvt ad=0.725 pd=5.58 as=0.725 ps=5.58 w=2.5 l=0.5
-**devattr s=29000,1116 d=29000,1116
-.ends
-
 .subckt sky130_fd_pr__nfet_01v8_VWWVRL a_n29_n100# a_887_n100# a_429_n100# a_n887_n188#
 + a_n1047_n274# a_n429_n188# a_487_n188# a_n945_n100# a_29_n188# a_n487_n100#
 X0 a_887_n100# a_487_n188# a_429_n100# a_n1047_n274# sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.145 ps=1.29 w=1 l=2
@@ -19,6 +14,16 @@ X2 a_n487_n100# a_n887_n188# a_n945_n100# a_n1047_n274# sky130_fd_pr__nfet_01v8 
 **devattr s=11600,516 d=5800,258
 X3 a_n29_n100# a_n429_n188# a_n487_n100# a_n1047_n274# sky130_fd_pr__nfet_01v8 ad=0.145 pd=1.29 as=0.145 ps=1.29 w=1 l=2
 **devattr s=5800,258 d=5800,258
+.ends
+
+.subckt vbias_resistor VDD VBIAS VSS
+XXR1 VBIAS VSS VDD sky130_fd_pr__res_xhigh_po_0p35_5BGKUX
+XXM6 VSS VSS VBIAS VBIAS VSS VBIAS VBIAS VSS VBIAS VBIAS sky130_fd_pr__nfet_01v8_VWWVRL
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_lvt_8TELWR a_n108_n250# a_n50_n338# a_n210_n424# a_50_n250#
+X0 a_50_n250# a_n50_n338# a_n108_n250# a_n210_n424# sky130_fd_pr__nfet_01v8_lvt ad=0.725 pd=5.58 as=0.725 ps=5.58 w=2.5 l=0.5
+**devattr s=29000,1116 d=29000,1116
 .ends
 
 .subckt sky130_fd_pr__pfet_01v8_lvt_GW6ZVV a_n887_n197# a_1345_n100# a_n29_n100# a_945_n197#
@@ -106,23 +111,17 @@ X19 a_603_n100# a_503_n197# a_445_n100# w_n1747_n319# sky130_fd_pr__pfet_01v8_lv
 **devattr s=5800,258 d=5800,258
 .ends
 
-.subckt p3_opamp VDD MINUS PLUS VOUT VSS
-XXR1 VBIAS VSS VDD sky130_fd_pr__res_xhigh_po_0p35_5BGKUX
-XXM1 VX PLUS VSS m1_9372_n852# sky130_fd_pr__nfet_01v8_lvt_8TELWR
-XXM2 VX MINUS VSS m1_5320_n942# sky130_fd_pr__nfet_01v8_lvt_8TELWR
-XXM3 VX VX VSS VBIAS VSS VBIAS VBIAS VX VBIAS VSS sky130_fd_pr__nfet_01v8_VWWVRL
-XXM4 m1_5320_n942# m1_5320_n942# VDD m1_5320_n942# VDD m1_5320_n942# m1_5320_n942#
-+ m1_5320_n942# m1_5320_n942# m1_5320_n942# VDD m1_5320_n942# VDD m1_5320_n942# sky130_fd_pr__pfet_01v8_lvt_GW6ZVV
-XXM5 m1_5320_n942# m1_9372_n852# VDD m1_5320_n942# VDD m1_5320_n942# m1_5320_n942#
-+ m1_9372_n852# m1_5320_n942# m1_9372_n852# VDD m1_5320_n942# VDD m1_9372_n852# sky130_fd_pr__pfet_01v8_lvt_GW6ZVV
-XXM6 VBIAS VBIAS VSS VBIAS VSS VBIAS VBIAS VBIAS VBIAS VSS sky130_fd_pr__nfet_01v8_VWWVRL
-XXM7 VOUT VOUT VSS VBIAS VOUT VBIAS VBIAS VSS VSS VBIAS VBIAS VOUT VBIAS VBIAS VSS
-+ VSS sky130_fd_pr__nfet_01v8_WWWVRA
-XXM8 m1_9372_n852# m1_9372_n852# VOUT m1_9372_n852# VDD VOUT VDD m1_9372_n852# VDD
-+ VOUT VDD VOUT VOUT m1_9372_n852# VOUT VDD m1_9372_n852# m1_9372_n852# VDD VDD VDD
-+ VOUT m1_9372_n852# m1_9372_n852# VOUT m1_9372_n852# m1_9372_n852# VOUT VDD m1_9372_n852#
-+ m1_9372_n852# m1_9372_n852# VOUT m1_9372_n852# m1_9372_n852# VDD VDD m1_9372_n852#
-+ m1_9372_n852# m1_9372_n852# m1_9372_n852# VOUT sky130_fd_pr__pfet_01v8_lvt_ER3WAW
+.subckt opamp VBIAS VDD MINUS PLUS VOUT VSS
+XXM1 V1 PLUS VSS m1_2578_n2492# sky130_fd_pr__nfet_01v8_lvt_8TELWR
+XXM2 V2 MINUS VSS m1_2578_n2492# sky130_fd_pr__nfet_01v8_lvt_8TELWR
+XXM3 VSS VSS m1_2578_n2492# VBIAS VSS VBIAS VBIAS VSS VBIAS m1_2578_n2492# sky130_fd_pr__nfet_01v8_VWWVRL
+XXM4 V2 VDD V2 V2 V2 V2 V2 VDD V2 VDD VDD V2 V2 VDD sky130_fd_pr__pfet_01v8_lvt_GW6ZVV
+XXM5 V2 VDD V1 V2 V1 V2 V2 VDD V2 VDD VDD V2 V1 VDD sky130_fd_pr__pfet_01v8_lvt_GW6ZVV
+XXM7 VSS VSS VOUT VBIAS VSS VBIAS VBIAS VSS VOUT VBIAS VBIAS VSS VBIAS VBIAS VOUT
++ VOUT sky130_fd_pr__nfet_01v8_WWWVRA
+XXM8 V1 V1 VOUT V1 VDD VOUT VDD V1 VDD VOUT VDD VOUT VOUT V1 VOUT VDD V1 V1 VDD VDD
++ VDD VOUT V1 V1 VOUT V1 V1 VOUT VDD V1 V1 V1 VOUT V1 V1 VDD VDD V1 V1 V1 V1 VOUT
++ sky130_fd_pr__pfet_01v8_lvt_ER3WAW
 .ends
 
 .subckt tt_um_argunda_tiny_opamp clk ena rst_n ua[0] ua[1] ua[2] ua[3] ua[4] ua[5]
@@ -132,7 +131,9 @@ XXM8 m1_9372_n852# m1_9372_n852# VOUT m1_9372_n852# VDD VOUT VDD m1_9372_n852# V
 + uio_out[0] uio_out[1] uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7]
 + uo_out[0] uo_out[1] uo_out[2] uo_out[3] uo_out[4] uo_out[5] uo_out[6] uo_out[7]
 + VPWR VGND
-Xp3_opamp_0 VPWR ua[2] ua[1] ua[0] VGND p3_opamp
+Xvbias_resistor_0 VPWR opamp_1/VBIAS VGND vbias_resistor
+Xopamp_0 opamp_1/VBIAS VPWR ua[2] ua[1] ua[0] VGND opamp
+Xopamp_1 opamp_1/VBIAS VPWR ua[5] ua[4] ua[3] VGND opamp
 R0 VGND uio_oe[7] 0.000000
 R1 VGND uo_out[2] 0.000000
 R2 VGND uio_oe[6] 0.000000
