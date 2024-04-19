@@ -21,7 +21,7 @@ module tt_um_argunda_tiny_opamp (
     top pong1(
         .VPWR  (VPWR),
         .VGND  (VGND),
-        .ui_in  (ui_in),
+        .ui_in  (ui_in[3:0]),
         .uo_out (uo_out),
         //.uio_in(),
         //.uio_out(),

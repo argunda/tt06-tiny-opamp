@@ -1939,10 +1939,6 @@ uo_out[6]                                  |uo_out[6]
 uo_out[7]                                  |uo_out[7]                                  
 VPWR                                       |VPWR                                       
 VGND                                       |VGND                                       
-(no matching pin)                          |ui_in[7]                                   
-(no matching pin)                          |ui_in[6]                                   
-(no matching pin)                          |ui_in[5]                                   
-(no matching pin)                          |ui_in[4]                                   
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes top and top are equivalent.
@@ -1962,6 +1958,10 @@ Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[4]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[5]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[7]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[7]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[6]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[5]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[4]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[7]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[5]
@@ -2006,6 +2006,10 @@ Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[4]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[5]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (0) disconnected node: uio_in[7]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[7]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[6]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[5]
+Cell tt_um_argunda_tiny_opamp (1) disconnected node: ui_in[4]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[7]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[6]
 Cell tt_um_argunda_tiny_opamp (1) disconnected node: uio_in[5]
@@ -2024,11 +2028,11 @@ vbias_resistor (1)                         |vbias_resistor (1)
 opamp (2)                                  |opamp (2)                                  
 top (1)                                    |top (1)                                    
 Number of devices: 4                       |Number of devices: 4                       
-Number of nets: 27                         |Number of nets: 27                         
+Number of nets: 23                         |Number of nets: 23                         
 ---------------------------------------------------------------------------------------
 Resolving symmetries by property value.
 Resolving symmetries by pin name.
-Netlists match uniquely with port errors.
+Netlists match uniquely.
 
 Subcircuit pins:
 Circuit 1: tt_um_argunda_tiny_opamp        |Circuit 2: tt_um_argunda_tiny_opamp        
@@ -2058,6 +2062,10 @@ uio_oe[0]                                  |uio_oe[0]
 ena                                        |ena                                        
 ua[6]                                      |ua[6]                                      
 ua[7]                                      |ua[7]                                      
+ui_in[4]                                   |ui_in[4]                                   
+ui_in[5]                                   |ui_in[5]                                   
+ui_in[6]                                   |ui_in[6]                                   
+ui_in[7]                                   |ui_in[7]                                   
 uio_in[0]                                  |uio_in[0]                                  
 uio_in[1]                                  |uio_in[1]                                  
 uio_in[2]                                  |uio_in[2]                                  
@@ -2082,16 +2090,9 @@ uio_out[5]                                 |uio_out[5]
 uio_out[6]                                 |uio_out[6]                                 
 uio_out[7]                                 |uio_out[7]                                 
 VGND                                       |VGND                                       
-(no matching pin)                          |ui_in[7]                                   
-(no matching pin)                          |ui_in[6]                                   
-(no matching pin)                          |ui_in[5]                                   
-(no matching pin)                          |ui_in[4]                                   
-ui_in[4]                                   |(no matching pin)                          
-ui_in[5]                                   |(no matching pin)                          
-ui_in[6]                                   |(no matching pin)                          
-ui_in[7]                                   |(no matching pin)                          
 ---------------------------------------------------------------------------------------
-Cell pin lists for tt_um_argunda_tiny_opamp and tt_um_argunda_tiny_opamp altered to match.
+Cell pin lists are equivalent.
 Device classes tt_um_argunda_tiny_opamp and tt_um_argunda_tiny_opamp are equivalent.
 
-Final result: Top level cell failed pin matching.
+Final result: Circuits match uniquely.
+.
