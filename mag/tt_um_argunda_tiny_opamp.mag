@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1713547680
+timestamp 1713551876
 << metal1 >>
 rect 19004 11954 21138 12054
 rect 10962 11860 15460 11942
@@ -740,7 +740,7 @@ timestamp 1713422843
 transform 1 0 8980 0 1 7586
 box 1988 -3100 7988 2900
 use top  top_0
-timestamp 1713541782
+timestamp 1713551075
 transform 1 0 1672 0 1 14438
 box 514 496 28587 29000
 use vbias_resistor  vbias_resistor_0
