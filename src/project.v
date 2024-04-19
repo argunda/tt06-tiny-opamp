@@ -18,7 +18,7 @@ module tt_um_argunda_tiny_opamp (
 
     wire vbias_i;
 
-    tt_um_algofoogle_solo_squash pong1(
+    top pong1(
         .vccd1  (VPWR),
         .vssd1  (VGND),
         .ui_in  (ui_in),
