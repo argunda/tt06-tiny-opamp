@@ -1937,14 +1937,12 @@ uo_out[4]                                  |uo_out[4]
 uo_out[5]                                  |uo_out[5]                                  
 uo_out[6]                                  |uo_out[6]                                  
 uo_out[7]                                  |uo_out[7]                                  
-(no matching pin)                          |vccd1                                      
-(no matching pin)                          |vssd1                                      
+VPWR                                       |VPWR                                       
+VGND                                       |VGND                                       
 (no matching pin)                          |ui_in[7]                                   
 (no matching pin)                          |ui_in[6]                                   
 (no matching pin)                          |ui_in[5]                                   
 (no matching pin)                          |ui_in[4]                                   
-VPWR                                       |(no matching pin)                          
-VGND                                       |(no matching pin)                          
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes top and top are equivalent.
@@ -2026,139 +2024,37 @@ vbias_resistor (1)                         |vbias_resistor (1)
 opamp (2)                                  |opamp (2)                                  
 top (1)                                    |top (1)                                    
 Number of devices: 4                       |Number of devices: 4                       
-Number of nets: 29                         |Number of nets: 29                         
+Number of nets: 27                         |Number of nets: 27                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
-Circuit 1: tt_um_argunda_tiny_opamp        |Circuit 2: tt_um_argunda_tiny_opamp        
-
----------------------------------------------------------------------------------------
-Net: dummy_45                              |Net: dummy_29                              
-  top/proxyui_in[4] = 1                    |  top/proxyVGND = 1                        
-                                           |                                           
-Net: dummy_44                              |Net: dummy_28                              
-  top/proxyui_in[5] = 1                    |  top/proxyVPWR = 1                        
-                                           |                                           
-Net: rst_n                                 |Net: rst_n                                 
-  top/rst_n = 1                            |  top/rst_n = 1                            
-                                           |                                           
-Net: clk                                   |Net: clk                                   
-  top/clk = 1                              |  top/clk = 1                              
-                                           |                                           
-Net: uo_out[0]                             |Net: uo_out[0]                             
-  top/uo_out[0] = 1                        |  top/uo_out[0] = 1                        
-                                           |                                           
-Net: uo_out[1]                             |Net: uo_out[1]                             
-  top/uo_out[1] = 1                        |  top/uo_out[1] = 1                        
-                                           |                                           
-Net: uo_out[2]                             |Net: uo_out[2]                             
-  top/uo_out[2] = 1                        |  top/uo_out[2] = 1                        
-                                           |                                           
-Net: uo_out[3]                             |Net: uo_out[3]                             
-  top/uo_out[3] = 1                        |  top/uo_out[3] = 1                        
-                                           |                                           
-Net: uo_out[4]                             |Net: uo_out[4]                             
-  top/uo_out[4] = 1                        |  top/uo_out[4] = 1                        
-                                           |                                           
-Net: uo_out[5]                             |Net: uo_out[5]                             
-  top/uo_out[5] = 1                        |  top/uo_out[5] = 1                        
-                                           |                                           
-Net: uo_out[6]                             |Net: uo_out[6]                             
-  top/uo_out[6] = 1                        |  top/uo_out[6] = 1                        
-                                           |                                           
-Net: uo_out[7]                             |Net: uo_out[7]                             
-  top/uo_out[7] = 1                        |  top/uo_out[7] = 1                        
-                                           |                                           
-Net: ui_in[0]                              |Net: ui_in[0]                              
-  top/ui_in[0] = 1                         |  top/ui_in[0] = 1                         
-                                           |                                           
-Net: ui_in[1]                              |Net: ui_in[1]                              
-  top/ui_in[1] = 1                         |  top/ui_in[1] = 1                         
-                                           |                                           
-Net: ui_in[2]                              |Net: ui_in[2]                              
-  top/ui_in[2] = 1                         |  top/ui_in[2] = 1                         
-                                           |                                           
-Net: ui_in[3]                              |Net: ui_in[3]                              
-  top/ui_in[3] = 1                         |  top/ui_in[3] = 1                         
-                                           |                                           
-Net: dummy_41                              |Net: ui_in[4]                              
-  top/proxyvssd1 = 1                       |  top/ui_in[4] = 1                         
-                                           |                                           
-Net: dummy_40                              |Net: ui_in[5]                              
-  top/proxyvccd1 = 1                       |  top/ui_in[5] = 1                         
-                                           |                                           
-Net: dummy_43                              |Net: ui_in[6]                              
-  top/proxyui_in[6] = 1                    |  top/ui_in[6] = 1                         
-                                           |                                           
-Net: dummy_42                              |Net: ui_in[7]                              
-  top/proxyui_in[7] = 1                    |  top/ui_in[7] = 1                         
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VGND                                  |Net: VGND                                  
-  vbias_resistor/VSS = 1                   |  vbias_resistor/VSS = 1                   
-  opamp/VSS = 2                            |  opamp/VSS = 2                            
-  top/VGND = 1                             |  top/vssd1 = 1                            
-                                           |                                           
-Net: VPWR                                  |Net: VPWR                                  
-  vbias_resistor/VDD = 1                   |  vbias_resistor/VDD = 1                   
-  opamp/VDD = 2                            |  opamp/VDD = 2                            
-  top/VPWR = 1                             |  top/vccd1 = 1                            
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: tt_um_argunda_tiny_opamp        |Circuit 2: tt_um_argunda_tiny_opamp        
-
----------------------------------------------------------------------------------------
-Instance: top_0                            |Instance: pong1                            
-  clk = 1                                  |  clk = 1                                  
-  rst_n = 1                                |  rst_n = 1                                
-  ui_in[0] = 1                             |  ui_in[0] = 1                             
-  ui_in[1] = 1                             |  ui_in[1] = 1                             
-  ui_in[2] = 1                             |  ui_in[2] = 1                             
-  ui_in[3] = 1                             |  ui_in[3] = 1                             
-  uo_out[0] = 1                            |  uo_out[0] = 1                            
-  uo_out[1] = 1                            |  uo_out[1] = 1                            
-  uo_out[2] = 1                            |  uo_out[2] = 1                            
-  uo_out[3] = 1                            |  uo_out[3] = 1                            
-  uo_out[4] = 1                            |  uo_out[4] = 1                            
-  uo_out[5] = 1                            |  uo_out[5] = 1                            
-  uo_out[6] = 1                            |  uo_out[6] = 1                            
-  uo_out[7] = 1                            |  uo_out[7] = 1                            
-  VPWR = 4                                 |  proxyVPWR = 1                            
-  VGND = 4                                 |  proxyVGND = 1                            
-  proxyvccd1 = 1                           |  vccd1 = 4                                
-  proxyvssd1 = 1                           |  vssd1 = 4                                
-  proxyui_in[7] = 1                        |  ui_in[7] = 1                             
-  proxyui_in[6] = 1                        |  ui_in[6] = 1                             
-  proxyui_in[5] = 1                        |  ui_in[5] = 1                             
-  proxyui_in[4] = 1                        |  ui_in[4] = 1                             
----------------------------------------------------------------------------------------
-Netlists do not match.
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely with port errors.
 
 Subcircuit pins:
 Circuit 1: tt_um_argunda_tiny_opamp        |Circuit 2: tt_um_argunda_tiny_opamp        
 -------------------------------------------|-------------------------------------------
-uo_out[7]                                  |uo_out[2] **Mismatch**                     
-uo_out[6]                                  |uo_out[3] **Mismatch**                     
-uo_out[5]                                  |uo_out[4] **Mismatch**                     
-uo_out[4]                                  |uo_out[5] **Mismatch**                     
-uo_out[3]                                  |uo_out[6] **Mismatch**                     
-uo_out[2]                                  |uo_out[7] **Mismatch**                     
-uo_out[1]                                  |ui_in[0] **Mismatch**                      
-uo_out[0]                                  |ui_in[1] **Mismatch**                      
-ui_in[3]                                   |ui_in[2] **Mismatch**                      
-ui_in[2]                                   |ui_in[3] **Mismatch**                      
-ui_in[1]                                   |ui_in[4] **Mismatch**                      
-ui_in[0]                                   |ui_in[5] **Mismatch**                      
-rst_n                                      |ui_in[6] **Mismatch**                      
-clk                                        |ui_in[7] **Mismatch**                      
-ua[0]                                      |ua[0]                                      
+ui_in[3]                                   |ui_in[3]                                   
+ui_in[2]                                   |ui_in[2]                                   
+ui_in[1]                                   |ui_in[1]                                   
+ui_in[0]                                   |ui_in[0]                                   
+uo_out[7]                                  |uo_out[7]                                  
+uo_out[6]                                  |uo_out[6]                                  
+uo_out[5]                                  |uo_out[5]                                  
+uo_out[4]                                  |uo_out[4]                                  
+uo_out[3]                                  |uo_out[3]                                  
+uo_out[2]                                  |uo_out[2]                                  
+uo_out[1]                                  |uo_out[1]                                  
+uo_out[0]                                  |uo_out[0]                                  
+clk                                        |clk                                        
+rst_n                                      |rst_n                                      
 ua[3]                                      |ua[3]                                      
-ua[1]                                      |ua[1]                                      
+ua[0]                                      |ua[0]                                      
 ua[4]                                      |ua[4]                                      
-ua[2]                                      |ua[2]                                      
+ua[1]                                      |ua[1]                                      
 ua[5]                                      |ua[5]                                      
-uio_oe[0]                                  |uio_oe[0]                                  
+ua[2]                                      |ua[2]                                      
 VPWR                                       |VPWR                                       
+uio_oe[0]                                  |uio_oe[0]                                  
 ena                                        |ena                                        
 ua[6]                                      |ua[6]                                      
 ua[7]                                      |ua[7]                                      
@@ -2186,10 +2082,10 @@ uio_out[5]                                 |uio_out[5]
 uio_out[6]                                 |uio_out[6]                                 
 uio_out[7]                                 |uio_out[7]                                 
 VGND                                       |VGND                                       
-(no matching pin)                          |uo_out[1]                                  
-(no matching pin)                          |uo_out[0]                                  
-(no matching pin)                          |clk                                        
-(no matching pin)                          |rst_n                                      
+(no matching pin)                          |ui_in[7]                                   
+(no matching pin)                          |ui_in[6]                                   
+(no matching pin)                          |ui_in[5]                                   
+(no matching pin)                          |ui_in[4]                                   
 ui_in[4]                                   |(no matching pin)                          
 ui_in[5]                                   |(no matching pin)                          
 ui_in[6]                                   |(no matching pin)                          

@@ -19,8 +19,8 @@ module tt_um_argunda_tiny_opamp (
     wire vbias_i;
 
     top pong1(
-        .vccd1  (VPWR),
-        .vssd1  (VGND),
+        .VPWR  (VPWR),
+        .VGND  (VGND),
         .ui_in  (ui_in),
         .uo_out (uo_out),
         //.uio_in(),
